@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 14:45:54 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/16 10:50:15 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/16 10:39:43 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/16 11:08:55 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <stdlib.h>
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned	char *str;
+	size_t	i;
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
-size_t	ft_strlen(const char *str);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-#endif
+	i = 0;
+	str = (unsigned char *)s;
+	while(n != 0)
+	{
+		str[i] = 0;
+		i++;
+		n--;
+	}
+}
+/*
+#include <stdio.h>
+int	main()
+{
+	char mot[] = "Bradley";
+	ft_bzero(mot, 3);
+
+	int	i = 0;
+	while(i != 7)
+	{
+		printf("%c",mot[i]); //c utilisé pour voir 
+				     //contenue de l'indicde dans un char
+		i++;
+	}
+	return (0);
+}*/
