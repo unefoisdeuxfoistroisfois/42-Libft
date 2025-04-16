@@ -6,13 +6,23 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:24:39 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/16 17:47:34 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:28:44 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlcpy(char *dsst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	strlcpy(char *dest, const char *src, size_t size)
 {
-	
+	size_t	i;
+	size_t	j;
+	i = 0;
+	while(src[i])
+	{
+		i++;
+	}
+
+	return (i);
 }
 
 int	main()

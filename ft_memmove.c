@@ -1,3 +1,4 @@
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
@@ -5,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:32:23 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/16 14:25:08 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/16 19:50:53 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +16,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dest2;
 	unsigned char	*src2;
-	size_t	i;
-	if(src == NULL && dest == NULL)
+	size_t			i;
+
+	if (src == NULL && dest == NULL)
 	{
 		return (NULL);
 	}
-	dest2 = (unsigned char	*)dest;
-	src2 = (unsigned char	*)src;
+	dest2 = (unsigned char *)dest;
+	src2 = (unsigned char *)src;
 	i = 0;
-
 	if (dest < src)
 	{
 		while (n != 0)
@@ -38,7 +39,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n != 0)
 		{
 			n--;
-			dest2[n] =  src2[n];
+			dest2[n] = src2[n];
 		}
 	}
 	return (dest);

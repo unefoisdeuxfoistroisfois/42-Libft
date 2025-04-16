@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 10:39:43 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/16 11:08:55 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/16 19:52:44 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned	char *str;
-	size_t	i;
+	unsigned char	*str;
+	size_t			i;
 
 	i = 0;
 	str = (unsigned char *)s;
-	while(n != 0)
+	while (n != 0)
 	{
 		str[i] = 0;
 		i++;
