@@ -1,53 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:24:39 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 16:49:06 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/17 16:49:56 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/17 17:42:54 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	sizecompl;
 
 	i = 0;
-	while (src[i] != '\0')
+	while(dest[i] != '\0')
 	{
 		i++;
 	}
-	if (size == 0)
-	{
-		return (i);
-	}
 	j = 0;
-	while (src[j] != '\0' && j < size -1)
+	while(src[j] != '\0')
 	{
-		dest[j] = src[j];
 		j++;
 	}
-	dest[j] = '\0';
-	return (i);
+	if(i == size)
+	{
+		sizecompl = i + j;
+		return (sizecompl);
+	}
+	sizecompl = i + j;
+	i = 0;
+	while(src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	return (sizecompl);
 }
-/*
 int	main()
 {
-	char	*mot;
-	char	mot2[7];
+	char mot[] = "bradley";
+	char	*mot1;
 	int	taille;
 	int	res;
 
-	mot = "Bradley";
-	taille = 7;
+	mot1 = "est la";
+	taille = 5;
 
-	res = ft_strlcpy(mot2, mot, taille);
-	printf("%d", res);
-	//printf("%s", mot2);
-	return(0);
-}*/
+	res = ft_strlcat(mot, mot1, taille);
+	printf("%d",res);
+	return (0);
+}

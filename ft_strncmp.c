@@ -1,44 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 10:39:43 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 22:11:02 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/17 20:01:18 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/17 20:27:20 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*str;
-	size_t			i;
+	size_t	i;
 
 	i = 0;
-	str = (unsigned char *)s;
-	while (n != 0)
+	while (s1[i] && s2[i] && (s1[i] == s2[i]) && (i < n - 1))
 	{
-		str[i] = 0;
 		i++;
-		n--;
 	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 /*
-#include <stdio.h>
 int	main()
 {
-	char mot[] = "Bradley";
-	ft_bzero(mot, 3);
+	char *mot;
+	char *mot1;
+	int taille;
+	int res;
 
-	int	i = 0;
-	while(i != 7)
+	mot = "Bradley";
+	mot1 = "B radley";
+	taille = 2;
+
+	res = ft_strncmp(mot, mot1, taille);
+
+	if (res > 0)
 	{
-		printf("%c",mot[i]); //c utilisé pour voir 
-				     //contenue de l'indicde dans un char
-		i++;
+		printf("%d", res);
 	}
-	return (0);
+	else if(res == 0)
+	{
+		printf("%d", res);
+	}
+	else if(res < 0)
+	{
+		printf("%d", res);
+	}
+
+	return 0;
 }*/

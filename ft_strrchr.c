@@ -1,44 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 10:39:43 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 22:11:02 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/17 19:27:47 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/17 20:00:06 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*str;
-	size_t			i;
+	char	cc;
+	char	*str;
+	int		i;
+	int		sizecompl;
 
-	i = 0;
-	str = (unsigned char *)s;
-	while (n != 0)
+	cc = (char)c;
+	str = (char *)s;
+	sizecompl = 0;
+	while (str[sizecompl] != '\0')
 	{
-		str[i] = 0;
-		i++;
-		n--;
+		sizecompl++;
 	}
+	i = sizecompl;
+	while (i >= 0)
+	{
+		if (str[i] == cc)
+		{
+			return (&str[i]);
+		}
+		i--;
+	}
+	return (NULL);
 }
 /*
-#include <stdio.h>
-int	main()
+int main()
 {
-	char mot[] = "Bradley";
-	ft_bzero(mot, 3);
+	char *mot;
+	char	lettre;
+	char	*res;
 
-	int	i = 0;
-	while(i != 7)
-	{
-		printf("%c",mot[i]); //c utilisé pour voir 
-				     //contenue de l'indicde dans un char
-		i++;
-	}
+	mot = "Bradley";
+	lettre = 'd';
+
+	res = ft_strrchr(mot, lettre);
+	printf("%s", res);
 	return (0);
+
 }*/

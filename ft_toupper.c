@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 10:39:43 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 22:11:02 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/17 17:51:14 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/17 18:04:07 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	i = 0;
-	str = (unsigned char *)s;
-	while (n != 0)
+	if (c >= 'a' && c <= 'z')
 	{
-		str[i] = 0;
-		i++;
-		n--;
+		c = c - 32;
+		return (c);
 	}
+	return (c);
 }
 /*
-#include <stdio.h>
 int	main()
 {
-	char mot[] = "Bradley";
-	ft_bzero(mot, 3);
+	char mot[7] = "Bradley";
+	int	i;
 
-	int	i = 0;
-	while(i != 7)
+	i = 0;
+	while(mot[i] != '\0')
 	{
-		printf("%c",mot[i]); //c utilisé pour voir 
-				     //contenue de l'indicde dans un char
+		printf("%c",ft_toupper(mot[i]));
 		i++;
 	}
 	return (0);
