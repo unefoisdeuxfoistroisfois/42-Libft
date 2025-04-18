@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 20:29:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 15:12:50 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/18 15:17:53 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/18 15:34:09 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	unsigned char	*str1;
+	unsigned char	*str2;
 	size_t			i;
-	unsigned char	*str;
-	unsigned char	cc;
+	int				diff;
 
 	i = 0;
-	str = (unsigned char *)s;
-	cc = (unsigned char)c;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (str[i] == cc)
+		if (str1[i] != str2[i])
 		{
-			return (&str[i]);
+			diff = str1[i] - str2[i];
+			return (diff);
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 int	main()
 {
-	char	*mot;
-	char	*res;
+	char	*mot1;
+	char	*mot2;
+	int	res;
 
-	mot = "Bradley";
-	res = ft_memchr(mot, 'd', 7); // pour la taille du mot
-	
-	printf("%s", res);
+	mot1 = "Bradley";
+	mot2 = "Braddley";
+	res = ft_memcmp(mot1, mot2, 7);
+	printf("%d", res);
 	return (0);
 }*/

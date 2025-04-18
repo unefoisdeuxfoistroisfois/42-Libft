@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:32:23 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/16 19:50:53 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:46:06 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t			i;
 
 	if (src == NULL && dest == NULL)
-	{
 		return (NULL);
-	}
 	dest2 = (unsigned char *)dest;
 	src2 = (unsigned char *)src;
 	i = 0;

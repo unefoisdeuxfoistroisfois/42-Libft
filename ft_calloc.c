@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 20:29:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 15:12:50 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/18 21:34:53 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/18 22:27:49 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
+	unsigned char	*tab;
 	size_t			i;
-	unsigned char	*str;
-	unsigned char	cc;
 
-	i = 0;
-	str = (unsigned char *)s;
-	cc = (unsigned char)c;
-	while (i < n)
+	tab = malloc(count * size);
+	if (tab == NULL)
 	{
-		if (str[i] == cc)
-		{
-			return (&str[i]);
-		}
+		return (NULL);
+	}
+	i = 0;
+	while (i < (count * size))
+	{
+		tab[i] = 0;
 		i++;
 	}
-	return (NULL);
+	return (tab);
 }
 /*
 int	main()
 {
-	char	*mot;
 	char	*res;
 
-	mot = "Bradley";
-	res = ft_memchr(mot, 'd', 7); // pour la taille du mot
-	
-	printf("%s", res);
+	res = ft_calloc(5,3);
+
+	int	i;
+
+	i =0;
+	while(i < 15)
+	{
+		printf("%d", res[i]);
+		i++;
+	}
 	return (0);
 }*/

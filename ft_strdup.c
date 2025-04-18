@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 20:29:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 15:12:50 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/18 20:52:40 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/18 21:30:52 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	cc;
+	int		i;
+	int		j;
+	char	*dest;
 
 	i = 0;
-	str = (unsigned char *)s;
-	cc = (unsigned char)c;
-	while (i < n)
+	dest = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (dest == NULL)
 	{
-		if (str[i] == cc)
-		{
-			return (&str[i]);
-		}
-		i++;
+		return (NULL);
 	}
-	return (NULL);
+	j = 0;
+	while (s[j] != '\0')
+	{
+		dest[j] = s[j];
+		j++;
+	}
+	dest[j] = '\0';
+	return (dest);
 }
 /*
 int	main()
@@ -37,9 +39,9 @@ int	main()
 	char	*mot;
 	char	*res;
 
-	mot = "Bradley";
-	res = ft_memchr(mot, 'd', 7); // pour la taille du mot
-	
+	mot = "BRADLEY";
+	res = ft_strdup(mot);
+
 	printf("%s", res);
 	return (0);
 }*/

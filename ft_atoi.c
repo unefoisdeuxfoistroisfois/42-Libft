@@ -1,45 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 20:29:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 15:12:50 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/18 19:57:15 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/18 20:25:18 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	cc;
+	int	i;
+	int	sign;
+	int	res;
 
 	i = 0;
-	str = (unsigned char *)s;
-	cc = (unsigned char)c;
-	while (i < n)
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] < 14))
 	{
-		if (str[i] == cc)
-		{
-			return (&str[i]);
-		}
 		i++;
 	}
-	return (NULL);
+	sign = 1;
+	while (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	res = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + (nptr[i] - 48);
+		i++;
+	}
+	res = res * sign;
+	return (res);
 }
 /*
 int	main()
 {
 	char	*mot;
-	char	*res;
+	int	res;
 
-	mot = "Bradley";
-	res = ft_memchr(mot, 'd', 7); // pour la taille du mot
-	
-	printf("%s", res);
+	mot = " 	 ---+-++-1531sdf255845s";
+	res = ft_atoi(mot);
+
+	printf("%d", res);
+
 	return (0);
 }*/
