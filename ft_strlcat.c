@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:49:56 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 17:42:54 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:58:42 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,41 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	sizecompl;
+	size_t	fullsize;
 
 	i = 0;
-	while(dest[i] != '\0')
-	{
+	while (dest[i] != '\0' && i < size)
 		i++;
-	}
 	j = 0;
-	while(src[j] != '\0')
-	{
+	while (src[j] != '\0')
 		j++;
-	}
-	if(i == size)
+	if (size <= i)
 	{
-		sizecompl = i + j;
-		return (sizecompl);
+		fullsize = size + j;
+		return (fullsize);
 	}
-	sizecompl = i + j;
-	i = 0;
-	while(src[j] != '\0')
+	fullsize = i + j;
+	j = 0;
+	while (src[j] != '\0' && i + 1 < size)
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
-	return (sizecompl);
+	dest[i] = '\0';
+	return (fullsize);
 }
+/*
 int	main()
 {
-	char mot[] = "bradley";
+	char mot[20] = "bradley";
 	char	*mot1;
-	int	taille;
-	int	res;
+	int	taille = sizeof(mot);
+	size_t	res;
 
-	mot1 = "est la";
-	taille = 5;
+	mot1 = "estiga la";
 
 	res = ft_strlcat(mot, mot1, taille);
-	printf("%d",res);
+	printf("%zu",res);
 	return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:52:40 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 21:30:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/19 15:03:04 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
 	int		j;
 	char	*dest;
 
-	i = 0;
 	dest = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (dest == NULL)
 	{

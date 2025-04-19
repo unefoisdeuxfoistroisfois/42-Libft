@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:24:39 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 16:49:06 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/19 14:04:45 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,10 @@ int	main()
 {
 	char	*mot;
 	char	mot2[7];
-	int	taille;
+	int	taille = sizeof(mot2);
 	int	res;
 
 	mot = "Bradley";
-	taille = 7;
 
 	res = ft_strlcpy(mot2, mot, taille);
 	printf("%d", res);
