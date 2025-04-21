@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 19:57:15 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/18 20:25:18 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/21 10:47:01 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	sign = 1;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			sign = -sign;
+			sign = -1;
 		i++;
 	}
 	res = 0;
@@ -45,7 +45,7 @@ int	main()
 	char	*mot;
 	int	res;
 
-	mot = " 	 ---+-++-1531sdf255845s";
+	mot = " 	 -1531sdf255845s";
 	res = ft_atoi(mot);
 
 	printf("%d", res);
