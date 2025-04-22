@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 21:59:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/21 22:39:34 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:37:17 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	sizeS1 = ft_strlen(s1);
 	sizeS2 = ft_strlen(s2);
 
-	newWord = malloc(sizeof(char) * (sizeS1 + sizeS2 + 1));
+	newWord = malloc(sizeof(char) * (sizeS1 + sizeS2) +1);
 	if (newWord == NULL)
 	{
 		return (NULL);
@@ -60,5 +60,7 @@ int	main()
 	mot2 = "est la";
 	res = ft_strjoin(mot1,mot2);
 	printf("%s", res);
+
+	free(res);
 	return (0);
 }
