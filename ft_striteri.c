@@ -1,29 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 15:20:53 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/24 15:57:43 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/25 16:08:30 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/25 16:50:58 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
 
-char	*ft_itoa(int n)
+void	ft_striteri(char *s, void (*f)(unsigned int,char*))
 {
+	unsigned int	i;
 
+	if (s == NULL && f == NULL)
+	{
+		return (NULL);
+	}
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 
+void	ft_pointeurfonction(unisnged int i, char *s)
+{
+	char	maj;
+
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+	}
+		maj = *c - 32;
+	}
+	else
+	{
+		maj = *c;
+	}
+	write(1,&maj,1);
+}
+
+}
 int	main()
 {
-	int	nombre;
-	char	res;
+	char	*mot;
 
-	nombre = 5;
-	res = ft_itoa(nombre);
-	printf("%s",res);
+	mot = "Bradley";
+	ft_striteri(&mot,&ft_pointeurfonction);
 	return (0);
-	}
+}
