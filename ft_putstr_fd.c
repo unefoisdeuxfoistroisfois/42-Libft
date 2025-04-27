@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 18:31:11 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 17:11:58 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/27 16:29:40 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/27 17:50:23 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
 /*
 int	main()
 {
 	int	fd;
-	char	lettre;
+	char	*mot;
 
-	lettre = 'B';
+	mot = "Bradley";
 	fd = open("new.txt", O_CREAT | O_WRONLY);
-//normaleent tu dois mettre cette proteciton 
-//tout le temps car imagine tu crée mais que tu n'as 
-//pas le droit de le crée la ou tu es.
-	if (fd < 0) 
+
+	if (fd < 0)
 	{
 		return (-1);
 	}
-	
-	ft_putchar_fd(lettre, fd);
 
-	close(fd);
+	ft_putstr_fd(mot, fd);
+
+	close (fd);
 	return (0);
 }*/

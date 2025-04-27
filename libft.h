@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:45:54 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/19 14:30:11 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/27 18:14:06 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -39,4 +41,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int	ft_atoi(const char *nptr);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif
