@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 22:43:22 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/22 22:00:35 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:41:42 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (s1[i] != '\0' && checkset(set, s1[i]) == 1)
 		i++;
-	j = ft_strlen(s1) -1 ;
-	while (j != i && checkset(set, s1[j]) == 1)
+	j = ft_strlen(s1);
+	while (j > i && checkset(set, s1[j] - 1) == 1)
 		j--;
-	newword = malloc(sizeof(char) * (j - i) + 1);
+	newword = malloc(sizeof(char) * (j - i + 1));
 	if (newword == NULL)
 		return (NULL);
 	k = 0;
-	while (i <= j)
+	while (i != j)
 	{
 		newword[k] = s1[i];
 		i++;
 		k++;
 	}
 	newword[k] = '\0';
-	return (newWord);
+	return (newword);
 }
 /*
 int main()

@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:09:33 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/19 14:15:33 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:22:19 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*src2;
 	size_t			i;
 
-	if (dest == NULL || src == NULL)
+	if (dest == NULL && src == NULL)
 	{
 		return (dest);
 	}

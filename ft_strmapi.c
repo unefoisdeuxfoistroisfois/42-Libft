@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:58:17 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/25 16:51:46 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/27 23:20:04 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
+	char			*str;
 	unsigned int	i;
 
 	if (!s || !f)
 	{
 		return (NULL);
-	}	
+	}
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == NULL)
 	{
@@ -33,7 +33,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	str[i] = '\0';
-
 	return (str);
 }
 /*

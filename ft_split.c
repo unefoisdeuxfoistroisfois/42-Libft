@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 22:02:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/23 23:43:11 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/27 23:18:49 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ int	countword(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if(s[i] != c && (i == 0 || s[i - 1] == c))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			count++;
 		}
 		i++;
 	}
-
 	return (count);
 }
 
@@ -52,25 +51,19 @@ char	*ft_strdup_range(const char *s, int start, int end)
 
 char	**ft_split(char	const *s, char c)
 {
-	int	i;
-	int	j;
-	int	start;
+	int		i;
+	int		j;
+	int		start;
 	char	**newword;
 
 	if (s == NULL)
-	{
 		return (NULL);
-	}
-
-	newword = malloc(sizeof(char *) * (countword(s,c) + 1));
+	newword = malloc(sizeof(char *) * (countword(s, c) + 1));
 	if (newword == NULL)
-	{
 		return (NULL);
-	}
-
 	i = 0;
 	j = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			start = i;
@@ -84,6 +77,7 @@ char	**ft_split(char	const *s, char c)
 	newword[j] = NULL;
 	return (newword);
 }
+/*
 int	main()
 {
 	char	*mot;
@@ -102,4 +96,4 @@ int	main()
 	}
 
 	return (0);
-}
+}*/

@@ -6,13 +6,13 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:15:22 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 18:02:08 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/28 22:11:50 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int	main()
 		return (-1);
 	}
 
-	ft_putendl(mot, fd);
+	ft_putendl_fd(mot, fd);
 	close(fd);
 	return (0);
 }*/

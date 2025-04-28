@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 21:59:09 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/22 16:37:17 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/27 23:08:02 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,32 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	sizeS1;
-	int	sizeS2;
-	char	*newWord;
-	int	i;
-	int	j;
-	if(s1 == NULL || s2 == NULL)
-	{
+	char	*newword;
+	int		i;
+	int		j;
+
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	}
-
-	sizeS1 = ft_strlen(s1);
-	sizeS2 = ft_strlen(s2);
-
-	newWord = malloc(sizeof(char) * (sizeS1 + sizeS2) +1);
-	if (newWord == NULL)
-	{
+	newword = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
+	if (newword == NULL)
 		return (NULL);
-	}
-
 	i = 0;
 	while (s1[i] != '\0')
 	{
-		newWord[i] = s1[i];
+		newword[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while(s2[j] != '\0')
+	while (s2[j] != '\0')
 	{
-		newWord[i] = s2[j];
+		newword[i] = s2[j];
 		i++;
 		j++;
 	}
-	newWord[i] = '\0';
-	return (newWord);
+	newword[i] = '\0';
+	return (newword);
 }
-
+/*
 int	main()
 {
 	char	*mot1;
@@ -63,4 +53,4 @@ int	main()
 
 	free(res);
 	return (0);
-}
+}*/

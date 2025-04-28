@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 19:27:47 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/17 20:00:06 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/28 01:12:29 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	cc;
-	char	*str;
 	int		i;
 	int		sizecompl;
 
 	cc = (char)c;
-	str = (char *)s;
 	sizecompl = 0;
-	while (str[sizecompl] != '\0')
+	while (s[sizecompl] != '\0')
 	{
 		sizecompl++;
 	}
 	i = sizecompl;
 	while (i >= 0)
 	{
-		if (str[i] == cc)
+		if (s[i] == cc)
 		{
-			return (&str[i]);
+			return ((char *)&s[i]);
 		}
 		i--;
 	}
