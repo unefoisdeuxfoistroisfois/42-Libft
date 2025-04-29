@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 22:43:22 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/28 22:41:42 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/29 18:38:26 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	i = 0;
-	while (s1[i] != '\0' && checkset(set, s1[i]) == 1)
+	while (s1[i] != '\0' && (checkset(set, s1[i]) == 1))
 		i++;
 	j = ft_strlen(s1);
-	while (j > i && checkset(set, s1[j] - 1) == 1)
+	while (j > i && (checkset(set, s1[j - 1])) == 1)
 		j--;
 	newword = malloc(sizeof(char) * (j - i + 1));
 	if (newword == NULL)

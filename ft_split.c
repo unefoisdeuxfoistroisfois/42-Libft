@@ -6,11 +6,24 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 22:02:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 23:18:49 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:36:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	free_tab(char **str, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
 int	countword(char const *s, char c)
 {
@@ -35,7 +48,11 @@ char	*ft_strdup_range(const char *s, int start, int end)
 	int		i;
 	char	*res;
 
-	res = malloc((end - start + 1) * sizeof(char));
+	if (s == NULL || start >= end)
+	{
+		return (NULL);
+	}
+	res = malloc(sizeof(char) * (end - start + 1));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
@@ -70,6 +87,11 @@ char	**ft_split(char	const *s, char c)
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
 			newword[j] = ft_strdup_range(s, start, i + 1);
+			if (newword[j] == NULL)
+			{
+				free_tab(newword, j);
+				return (NULL);
+			}
 			j++;
 		}
 		i++;
