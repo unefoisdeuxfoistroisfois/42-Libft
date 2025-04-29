@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 20:17:03 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 23:51:46 by britela-         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:20:56 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ char	*ft_empty(void)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*newword;
-	unsigned int	sizes;
-	size_t	i;
-	size_t	j;
+	char				*newword;
+	unsigned int		sizes;
+	size_t				i;
+	size_t				j;
 
 	if (s == NULL)
 		return (NULL);
