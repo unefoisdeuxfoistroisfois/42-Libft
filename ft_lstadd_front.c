@@ -1,48 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 20:21:56 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/30 17:26:48 by britela-         ###   ########.fr       */
+/*   Created: 2025/04/30 16:58:48 by britela-          #+#    #+#             */
+/*   Updated: 2025/04/30 18:42:36 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libtf.h"
 
-t_list *ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *node;
-
-	node = malloc(sizeof(t_list));
-	if (node == NULL)
-	{
-		return (NULL);
-	}
-
-	node->content = content;
-	node->next = NULL;
-
-	return (node);
 }
-/*
 int	main()
 {
-	char	*mot;
-
-	t_list	*resultats;
-
-	mot = "Bradley";
-	resultats = ft_lstnew(mot);
-	if (resultats != NULL) //si il y'a qq chose dedans 
-	{
-		printf("OK %s", (char *)resultats->content);
-	}
-	else
-	{
-		printf("ciao");
-	}
 	return (0);
-}*/
+}
