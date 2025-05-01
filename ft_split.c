@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 22:02:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/29 19:36:46 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/01 01:22:05 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,16 @@ char	*ft_strdup_range(const char *s, int start, int end)
 	return (res);
 }
 
+int	ft_split_word(char **newword, const char *s, int start, int end, int j)
+{
+	newword[j] = ft_strdup_range(s, start, end);
+	if (newword[j] == NULL)
+	{
+		free_tab(newword, j);
+		return (0);
+	}
+	return (1);
+}
 char	**ft_split(char	const *s, char c)
 {
 	int		i;
@@ -86,12 +96,8 @@ char	**ft_split(char	const *s, char c)
 			start = i;
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			newword[j] = ft_strdup_range(s, start, i + 1);
-			if (newword[j] == NULL)
-			{
-				free_tab(newword, j);
+			if (!ft_split_word(newword, s, start, i + 1, j))
 				return (NULL);
-			}
 			j++;
 		}
 		i++;

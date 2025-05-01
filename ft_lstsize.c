@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/01 23:51:35 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/02 00:07:55 by britela-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
@@ -15,14 +29,14 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	mode = malloc(sizeof(t_list));
+	node = malloc(sizeof(t_list));
 	if (node == NULL)
 	{
 		return (NULL);
 	}
 	
 	node->content = content;
-	node->new = NULL;
+	node->next = NULL;
 
 	return (node);
 }
@@ -47,9 +61,10 @@ int	main()
 	//ou utilise ft_lstadd_front
 
 	t_list	*tete;
-	int	resultats
+	int	resultats;
 
 	tete = res1;
 	resultats = ft_lstsize(tete);
 
-	printf("%s", resultats);
+	printf("%d", resultats);
+}
