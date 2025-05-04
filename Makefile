@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 14:39:41 by britela-          #+#    #+#              #
-#    Updated: 2025/04/27 19:52:43 by britela-         ###   ########.fr        #
+#    Updated: 2025/05/04 19:09:27 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 OBJ = 	ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o \
 	ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o \
@@ -30,6 +33,9 @@ OBJ = 	ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o \
 	ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
+
+OBJBONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
+	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o 
 
 RM = rm -rf
 LIB = ar rcs # Création de la librairie
@@ -43,6 +49,9 @@ $(NAME): $(OBJ)
 # Compilation des fichiers .c en .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+bonus:
+	$(CC) $(CFLAGS) -c $(SRCBONUS)
+	$(LIB) $(NAME) $(OBJBONUS)
 
 #Suppression des fichiers objets
 clean:
@@ -54,5 +63,4 @@ fclean: clean
 
 #Recompilation
 re: fclean all
-
 .PHONY: all clean fclean re

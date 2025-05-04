@@ -6,25 +6,23 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:21:56 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/30 17:26:48 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:39:57 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = malloc(sizeof(t_list));
 	if (node == NULL)
 	{
 		return (NULL);
 	}
-
 	node->content = content;
 	node->next = NULL;
-
 	return (node);
 }
 /*

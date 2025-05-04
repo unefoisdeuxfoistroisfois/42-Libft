@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 23:51:35 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/02 00:07:55 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:42:44 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
+/*
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
@@ -67,4 +67,4 @@ int	main()
 	resultats = ft_lstsize(tete);
 
 	printf("%d", resultats);
-}
+}*/

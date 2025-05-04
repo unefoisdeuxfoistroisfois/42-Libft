@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:24:29 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/02 15:02:52 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:46:19 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	if (*lst == NULL)
 	{
-		*lst = new; //cas ou la liste existe mais est vide donc on lui donne new
+		*lst = new;
 	}
 	else
 	{
@@ -30,7 +30,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last->next = new;
 	}
 }
-
+/*
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
@@ -90,4 +90,4 @@ int	main()
 	}
 
 	return (0);
-}
+}*/

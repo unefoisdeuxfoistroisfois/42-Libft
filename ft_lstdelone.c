@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:10:53 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/04 00:57:16 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:48:02 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	}
 	else
 	{
-		del(lst->content); // contenue de maillon.
+		del(lst->content);
 		free(lst);
 	}
 }
-
+/*
 void	ft_del_content(void *content)
 {
 	free(content);
@@ -86,4 +86,4 @@ int	main()
 	}
 	
 	return (0);
-}
+}*/

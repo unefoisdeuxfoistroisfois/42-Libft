@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 01:20:13 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/02 01:51:16 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:44:08 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	{
 		return ;
 	}
-	new->next = *lst; // maillon pointe vers l'ancien  debut de liste
-	*lst = new; // on met notre maillon au tete de liste;
+	new->next = *lst;
+	*lst = new;
 }
-
+/*
 t_list	*ft_lstnew(void *content)
 {
 	t_list *node;
@@ -76,4 +76,4 @@ int	main()
 	t_list *resultats = ft_lstlast(tete);
 
     	printf("%s\n", (char *)resultats->content);
-}	
+}*/	

@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 22:02:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/01 01:22:05 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/04 17:34:46 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	ft_split_word(char **newword, const char *s, int start, int end, int j)
 	}
 	return (1);
 }
+
 char	**ft_split(char	const *s, char c)
 {
 	int		i;
