@@ -6,12 +6,25 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 01:20:13 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/04 18:44:08 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:49:30 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == NULL)
+	{
+		return (NULL);
+	}
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
+}
+/*
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst == NULL || new == NULL)
@@ -21,7 +34,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-/*
 t_list	*ft_lstnew(void *content)
 {
 	t_list *node;
@@ -36,20 +48,6 @@ t_list	*ft_lstnew(void *content)
 	node->next = NULL;
 	
 	return node;
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	if (lst == NULL)
-	{
-		return (NULL);
-	}
-	while (lst->next != NULL)
-	{
-		lst = lst->next;
-	}
-
-	return (lst);
 }
 
 int	main()
@@ -76,4 +74,4 @@ int	main()
 	t_list *resultats = ft_lstlast(tete);
 
     	printf("%s\n", (char *)resultats->content);
-}*/	
+}*/
