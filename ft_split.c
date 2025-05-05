@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 22:02:24 by britela-          #+#    #+#             */
-/*   Updated: 2025/05/04 17:34:46 by britela-         ###   ########.fr       */
+/*   Created: 2025/05/05 23:52:46 by britela-          #+#    #+#             */
+/*   Updated: 2025/05/06 01:54:26 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_tab(char **str, int count)
 	free(str);
 }
 
-int	countword(char const *s, char c)
+int	ft_countword(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -43,67 +43,67 @@ int	countword(char const *s, char c)
 	return (count);
 }
 
-char	*ft_strdup_range(const char *s, int start, int end)
+char	*add_str(char const *s, char c)
 {
 	int		i;
-	char	*res;
+	char	*word;
 
-	if (s == NULL || start >= end)
-	{
-		return (NULL);
-	}
-	res = malloc(sizeof(char) * (end - start + 1));
-	if (res == NULL)
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	word = malloc(sizeof(char) * (i + 1));
+	if (word == NULL)
 		return (NULL);
 	i = 0;
-	while (start < end)
+	while (s[i] != '\0' && s[i] != c)
 	{
-		res[i] = s[start];
-		start++;
+		word[i] = s[i];
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
+	word[i] = '\0';
+	return (word);
 }
 
-int	ft_split_word(char **newword, const char *s, int start, int end, int j)
-{
-	newword[j] = ft_strdup_range(s, start, end);
-	if (newword[j] == NULL)
-	{
-		free_tab(newword, j);
-		return (0);
-	}
-	return (1);
-}
-
-char	**ft_split(char	const *s, char c)
+char	**create_str(char **str, char const *s, char c)
 {
 	int		i;
 	int		j;
 	int		start;
-	char	**newword;
+	char	*temp;
 
-	if (s == NULL)
-		return (NULL);
-	newword = malloc(sizeof(char *) * (countword(s, c) + 1));
-	if (newword == NULL)
-		return (NULL);
 	i = 0;
 	j = 0;
+	start = -1;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			start = i;
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0') && start != -1)
 		{
-			if (!ft_split_word(newword, s, start, i + 1, j))
-				return (NULL);
+			temp = add_str(s + start, c);
+			if (temp == NULL)
+				return (free_tab(str, j), NULL);
+			str[j] = temp;
+			start = -1;
 			j++;
 		}
 		i++;
 	}
-	newword[j] = NULL;
+	str[j] = NULL;
+	return (str);
+}
+
+char	**ft_split(char	const *s, char c)
+{
+	char	**newword;
+
+	if (s == NULL)
+		return (NULL);
+	newword = malloc(sizeof(char *) * (ft_countword(s, c) + 1));
+	if (newword == NULL)
+		return (NULL);
+	if (create_str(newword, s, c) == NULL)
+		return (NULL);
 	return (newword);
 }
 /*
@@ -124,5 +124,6 @@ int	main()
 		i++;
 	}
 
+	free_tab(res, i);
 	return (0);
 }*/
