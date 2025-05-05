@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:55:33 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 18:17:01 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:17:11 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
@@ -36,9 +38,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 	else
-	{
 		ft_putchar_fd(n + 48, fd);
-	}
 }
 /*
 int	main()

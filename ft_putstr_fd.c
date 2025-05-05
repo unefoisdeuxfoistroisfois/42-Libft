@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:29:40 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 17:50:23 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:05:18 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == NULL || fd < 0)
+	{
+		return ;
+	}
 	while (s[i] != '\0')
 	{
 		ft_putchar_fd(s[i], fd);

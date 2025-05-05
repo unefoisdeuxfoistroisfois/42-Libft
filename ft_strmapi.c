@@ -6,7 +6,7 @@
 /*   By: britela- <britela-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:58:17 by britela-          #+#    #+#             */
-/*   Updated: 2025/04/27 23:20:04 by britela-         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:56:32 by britela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	if (!s || !f)
+	if (s == NULL || f == NULL)
 	{
 		return (NULL);
 	}
