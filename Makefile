@@ -6,7 +6,7 @@
 #    By: britela- <britela-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 14:39:41 by britela-          #+#    #+#              #
-#    Updated: 2025/05/04 19:09:27 by britela-         ###   ########.fr        #
+#    Updated: 2025/05/06 15:45:24 by britela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,9 @@ SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRCBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OBJ = 	ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o \
@@ -34,8 +35,9 @@ OBJ = 	ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
-OBJBONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
-	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o 
+OBJBONUS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o \
+	   ft_lstlast_bonus.o ft_lstadd_back_bonus.o ft_lstdelone_bonus.o \
+	   ft_lstclear_bonus.o ft_lstiter_bonus.o ft_lstmap_bonus.o 
 
 RM = rm -rf
 LIB = ar rcs # Création de la librairie
@@ -55,7 +57,7 @@ bonus:
 
 #Suppression des fichiers objets
 clean:
-	$(RM) $(OBJ) #SUPPRESION OBJ 
+	$(RM) $(OBJ) $(OBJBONUS) #SUPPRESION OBJ 
 
 #Suppresiond es fichieres objets et la librairie
 fclean: clean
@@ -63,4 +65,4 @@ fclean: clean
 
 #Recompilation
 re: fclean all
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
